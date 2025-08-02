@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malaysia Private Physiotherapy Association (MPPA)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Hero section background with a dark overlay for text readability */
+        .hero-bg {
+            background-image: linear-gradient(rgba(27, 57, 106, 0.8), rgba(27, 57, 106, 0.8)), url('https://yion05.github.io/my-website-project/images/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        /* Custom classes for section titles for consistency */
+        .section-title {
+            @apply text-3xl md:text-4xl font-bold text-gray-800;
+        }
+        .section-subtitle {
+             @apply mt-2 text-lg text-gray-500;
+        }
+        /* Card styling with hover effects */
+        .card {
+            @apply bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2;
+        }
+        /* Subtle background pattern for alternating sections */
+        .subtle-bg {
+            background-color: #f9fafb; /* bg-gray-50 */
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d1d5db' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        /* Text shadow for hero text to make it pop */
+        .text-shadow {
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        }
+        /* Animation classes for fade-in effect on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        #to-top-btn {
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-700">
+
+    <!-- Header -->
+    <!-- I removed the 'bg-white/90' and 'backdrop-blur-sm' classes and replaced them with 'bg-white' to make the header opaque. -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="https://yion05.github.io/my-website-project/images/logo.jpg" alt="MPPA Logo" class="h-14" onerror="this.onerror=null;this.src='https://placehold.co/100x56/e2e8f0/ffffff?text=Logo';">
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-gray-600 hover:text-blue-800 font-medium transition">About</a>
+                <a href="#mission" class="text-gray-600 hover:text-blue-800 font-medium transition">Our Values</a>
+                <a href="#committee" class="text-gray-600 hover:text-blue-800 font-medium transition">Committee</a>
+                <a href="#events" class="text-gray-600 hover:text-blue-800 font-medium transition">Highlights</a>
+                <a href="#contact" class="bg-blue-700 text-white px-5 py-2 rounded-full hover:bg-blue-800 transition-colors font-semibold shadow hover:shadow-lg">Contact Us</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden flex items-center p-2 rounded-md hover:bg-gray-100">
+                 <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <a href="#about" class="block py-3 px-6 text-sm hover:bg-gray-100">About</a>
+            <a href="#mission" class="block py-3 px-6 text-sm hover:bg-gray-100">Our Values</a>
+            <a href="#committee" class="block py-3 px-6 text-sm hover:bg-gray-100">Committee</a>
+            <a href="#events" class="block py-3 px-6 text-sm hover:bg-gray-100">Highlights</a>
+            <a href="#contact" class="block py-3 px-6 text-sm hover:bg-gray-100">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white">
+        <div class="container mx-auto px-6 py-40 md:py-56 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-shadow">Malaysia Private Physiotherapy Association</h1>
+            <p class="text-lg md:text-xl mb-2 max-w-3xl mx-auto">MPPA (Previously known as PPPA)</p>
+            <p class="text-xl md:text-2xl font-light max-w-4xl mx-auto">Connecting and empowering private physiotherapy professionals across Malaysia.</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 fade-in">
+                    <h3 class="text-5xl font-extrabold text-blue-800 mb-2">2021</h3>
+                    <p class="text-gray-500 font-medium">Year Founded</p>
+                </div>
+                <div class="p-6 fade-in" style="transition-delay: 200ms;">
+                    <h3 class="text-5xl font-extrabold text-blue-800 mb-2">150+</h3>
+                    <p class="text-gray-500 font-medium">Active Private Practitioners</p>
+                </div>
+                <div class="p-6 fade-in" style="transition-delay: 400ms;">
+                    <h3 class="text-5xl font-extrabold text-blue-800 mb-2">3</h3>
+                    <p class="text-gray-500 font-medium">Core Values: Integrity, Excellence, Unity</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About MPPA Section -->
+    <section id="about" class="py-24 subtle-bg">
+        <div class="container mx-auto px-6 fade-in">
+            <div class="text-center mb-16">
+                <h2 class="section-title">About The MPPA</h2>
+                <p class="section-subtitle">Advocating for Excellence in Private Physiotherapy</p>
+                <div class="w-24 h-1 bg-blue-700 mx-auto mt-4"></div>
+            </div>
+            <p class="text-center max-w-4xl mx-auto text-lg text-gray-600 leading-relaxed">
+                The Malaysia Private Physiotherapy Association (MPPA) is a professional body representing private sector physiotherapists across Malaysia. We are a dynamic network of clinicians committed to advancing private physiotherapy practice through collaboration, advocacy, and professional development. We advocate for clinical standards, business excellence, and fair representation in national healthcare policy.
+            </p>
+        </div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section id="mission" class="bg-white py-24">
+        <div class="container mx-auto px-6">
+             <div class="text-center mb-16 fade-in">
+                <h2 class="section-title">Our Vision & Mission</h2>
+                <p class="section-subtitle">Guiding Our Path Forward</p>
+                <div class="w-24 h-1 bg-blue-700 mx-auto mt-4"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-10 items-start">
+                <div class="card fade-in">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4">Our Vision</h3>
+                    <p class="text-gray-600 leading-relaxed">To be the leading voice and support system for physiotherapists in private practice in Malaysia to the government, MPA, and related parties.</p>
+                </div>
+                <div class="card fade-in" style="transition-delay: 200ms;">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4">Our Mission</h3>
+                    <ul class="space-y-3 text-gray-600 leading-relaxed">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-blue-700 mt-1 mr-3 flex-shrink-0"></i><span>To represent private practices in various business groups & platforms.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-blue-700 mt-1 mr-3 flex-shrink-0"></i><span>To support professional development and business growth.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-blue-700 mt-1 mr-3 flex-shrink-0"></i><span>To foster collaboration, innovation, and best practices.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Committee Members Section -->
+    <section id="committee" class="py-24 subtle-bg">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="section-title">Meet Our Committee</h2>
+                <p class="section-subtitle">The Leaders Driving Our Mission</p>
+                <div class="w-24 h-1 bg-blue-700 mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+                <!-- Committee Member Card: President -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group fade-in">
+                    <div class="w-48 h-48 mx-auto bg-gray-200 rounded-lg p-1 shadow-inner overflow-hidden">
+                        <img src="https://yion05.github.io/my-website-project/images/president.jpg" alt="President Ben Loo" class="w-full h-full rounded-lg object-cover border-4 border-white group-hover:scale-105 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/200x200/dbeafe/1e3a8a?text=Photo';">
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="font-bold text-xl text-blue-900">President</h4>
+                        <p class="text-gray-800 font-semibold">Ben Loo</p>
+                        <p class="text-gray-500 text-sm">Director of Benphysio & Rehab</p>
+                    </div>
+                </div>
+                <!-- Other Committee Members -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group fade-in" style="transition-delay: 150ms;">
+                    <div class="w-48 h-48 mx-auto bg-gray-200 rounded-lg p-1 shadow-inner overflow-hidden">
+                        <img src="https://placehold.co/200x200/dbeafe/1e3a8a?text=Photo" alt="Vice President" class="w-full h-full rounded-lg object-cover border-4 border-white group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="font-bold text-xl text-blue-900">Vice President</h4>
+                        <p class="text-gray-600">[Name Here]</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group fade-in" style="transition-delay: 300ms;">
+                    <div class="w-48 h-48 mx-auto bg-gray-200 rounded-lg p-1 shadow-inner overflow-hidden">
+                        <img src="https://placehold.co/200x200/dbeafe/1e3a8a?text=Photo" alt="Secretary" class="w-full h-full rounded-lg object-cover border-4 border-white group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="font-bold text-xl text-blue-900">Secretary</h4>
+                        <p class="text-gray-600">[Name Here]</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group fade-in" style="transition-delay: 450ms;">
+                    <div class="w-48 h-48 mx-auto bg-gray-200 rounded-lg p-1 shadow-inner overflow-hidden">
+                        <img src="https://placehold.co/200x200/dbeafe/1e3a8a?text=Photo" alt="Treasurer" class="w-full h-full rounded-lg object-cover border-4 border-white group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="font-bold text-xl text-blue-900">Treasurer</h4>
+                        <p class="text-gray-600">[Name Here]</p>
+                    </div>
+                </div>
+            </div>
+             <div class="mt-16 text-center fade-in">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8">Committee Members</h3>
+                <div class="flex justify-center items-center flex-wrap gap-10">
+                     <div class="text-center group fade-in">
+                        <div class="w-36 h-36 mx-auto bg-gray-200 rounded-lg p-1 shadow-inner overflow-hidden">
+                            <img src="https://placehold.co/150x150/dbeafe/1e3a8a?text=Photo" alt="Committee Member" class="w-full h-full rounded-lg object-cover border-2 border-white group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <p class="font-semibold text-gray-700 mt-3">[Name Here]</p>
+                     </div>
+                      <div class="text-center group fade-in" style="transition-delay: 150ms;">
+                        <div class="w-36 h-36 mx-auto bg-gray-200 rounded-lg p-1 shadow-inner overflow-hidden">
+                            <img src="https://placehold.co/150x150/dbeafe/1e3a8a?text=Photo" alt="Committee Member" class="w-full h-full rounded-lg object-cover border-2 border-white group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <p class="font-semibold text-gray-700 mt-3">[Name Here]</p>
+                     </div>
+                      <div class="text-center group fade-in" style="transition-delay: 300ms;">
+                        <div class="w-36 h-36 mx-auto bg-gray-200 rounded-lg p-1 shadow-inner overflow-hidden">
+                            <img src="https://placehold.co/150x150/dbeafe/1e3a8a?text=Photo" alt="Committee Member" class="w-full h-full rounded-lg object-cover border-2 border-white group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <p class="font-semibold text-gray-700 mt-3">[Name Here]</p>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights/Events Section -->
+    <section id="events" class="bg-white py-24">
+        <div class="container mx-auto px-6 fade-in">
+            <div class="text-center mb-16">
+                <h2 class="section-title">Association Highlights</h2>
+                 <p class="section-subtitle">Making an Impact</p>
+                <div class="w-24 h-1 bg-blue-700 mx-auto mt-4"></div>
+            </div>
+            <!-- FIX: Removed 'items-center' from the flex container below. -->
+            <!-- This allows the child elements to stretch vertically, fixing the image height. -->
+            <div class="max-w-5xl mx-auto bg-gray-50 rounded-lg shadow-xl overflow-hidden md:flex">
+                <div class="md:w-1/3 bg-gray-200">
+                    <img src="https://yion05.github.io/my-website-project/images/highlight.png" alt="Press Conference for SST Exemption" class="h-full w-full object-cover">
+                </div>
+                <div class="p-8 md:p-12 md:w-2/3 flex flex-col justify-center">
+                    <h3 class="font-bold text-2xl text-blue-900 mb-4">Press Conference for SST Exemption</h3>
+                    <p class="text-gray-600 leading-relaxed">On February 28th, 2024, MPPA, represented by President Ben Loo and DATO Dr. B.S. Bains, alongside representatives from the Malaysian Physiotherapy Association (MPA), held a crucial press conference. The agenda was to address the recently imposed Sales and Service Tax (SST) on physiotherapy services and to advocate for its exemption. This significant event, attended by prominent press companies, highlighted the industry's unified effort to ensure physiotherapy remains accessible and affordable for all Malaysians.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <footer id="contact" class="bg-blue-900 text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="text-center fade-in">
+                <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
+                <p class="max-w-xl mx-auto mb-10 text-blue-200">We welcome inquiries, membership applications, and collaboration opportunities.</p>
+            </div>
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-4 fade-in">
+                    <i class="fas fa-envelope fa-2x text-blue-300 mb-3"></i>
+                    <h4 class="font-semibold text-lg mb-2">Email Us</h4>
+                    <a href="mailto:mppa.exco@gmail.com" class="text-blue-200 hover:text-white transition">mppa.exco@gmail.com</a>
+                </div>
+                <div class="p-4 fade-in" style="transition-delay: 200ms;">
+                    <i class="fas fa-phone fa-2x text-blue-300 mb-3"></i>
+                    <h4 class="font-semibold text-lg mb-2">Call Us</h4>
+                    <p class="text-blue-200">016-2422015</p>
+                </div>
+                <div class="p-4 fade-in" style="transition-delay: 400ms;">
+                    <i class="fab fa-instagram fa-2x text-blue-300 mb-3"></i>
+                    <h4 class="font-semibold text-lg mb-2">Follow Us</h4>
+                    <a href="#" class="text-blue-200 hover:text-white transition">Instagram</a>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 pt-8 mt-12 text-center text-blue-300">
+                <p>&copy; 2024 Malaysia Private Physiotherapy Association (MPPA). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button id="to-top-btn" class="fixed bottom-5 right-5 bg-blue-700 text-white p-3 rounded-full shadow-lg hover:bg-blue-800 focus:outline-none opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Scroll-to-top button logic
+        const toTopBtn = document.getElementById('to-top-btn');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                toTopBtn.classList.remove('opacity-0', 'invisible');
+            } else {
+                toTopBtn.classList.add('opacity-0', 'invisible');
+            }
+        });
+        toTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Fade-in animation on scroll
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = {
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('visible');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
+</body>
+</html>
